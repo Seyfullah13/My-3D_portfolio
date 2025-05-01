@@ -1,16 +1,16 @@
-import React, { useRef } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useGSAP } from '@gsap/react'
+import React, { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 // Register the ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const ShowcaseSection = () => {
-  const sectionRef = useRef(null)
-  const project1Ref = useRef(null)
-  const project2Ref = useRef(null)
-  const project3Ref = useRef(null)
+  const sectionRef = useRef(null);
+  const project1Ref = useRef(null);
+  const project2Ref = useRef(null);
+  const project3Ref = useRef(null);
 
   useGSAP(() => {
     // Fade in the entire showcase section
@@ -18,10 +18,14 @@ const ShowcaseSection = () => {
       sectionRef.current,
       { opacity: 0 },
       { opacity: 1, duration: 1.5 }
-    )
+    );
 
     // Animate each project card on scroll
-    const cards = [project1Ref.current, project2Ref.current, project3Ref.current]
+    const cards = [
+      project1Ref.current,
+      project2Ref.current,
+      project3Ref.current,
+    ];
     cards.forEach((card, index) => {
       if (card) {
         gsap.fromTo(
@@ -32,16 +36,16 @@ const ShowcaseSection = () => {
             opacity: 1,
             duration: 1,
             delay: 0.3 * (index + 1),
-            ease: 'power2.out',
+            ease: "power2.out",
             scrollTrigger: {
               trigger: card,
-              start: 'top 80%'
-            }
+              start: "top 80%",
+            },
           }
-        )
+        );
       }
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <section id="work" ref={sectionRef} className="app-showcase">
@@ -54,7 +58,8 @@ const ShowcaseSection = () => {
             </div>
             <div className="text-content">
               <h2>
-                A Hangman game: guess letters to reveal a hidden word before running out of attempts.
+                A Hangman game: guess letters to reveal a hidden word before
+                running out of attempts.
               </h2>
             </div>
           </div>
@@ -63,7 +68,10 @@ const ShowcaseSection = () => {
           <div className="project-list-wrapper overflow-hidden">
             <div className="project" ref={project2Ref}>
               <div className="image-wrapper bg-[#ffefdb]">
-                <img src="/images/Project2.png" alt="Mastermind game screenshot" />
+                <img
+                  src="/images/Project2.png"
+                  alt="Mastermind game screenshot"
+                />
               </div>
               <h2>Mastermind</h2>
             </div>
@@ -73,14 +81,15 @@ const ShowcaseSection = () => {
                 <img src="/images/Project3.png" alt="Myuka app screenshot" />
               </div>
               <h2>
-                Myuka: enter a barcode to fetch Nutri-Score, allergen alerts, ingredients, and origin via the Open Food Facts API.
+                Myuka: enter a barcode to fetch Nutri-Score, allergen alerts,
+                ingredients, and origin via the Open Food Facts API.
               </h2>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ShowcaseSection
+export default ShowcaseSection;
