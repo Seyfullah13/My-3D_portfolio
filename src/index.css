@@ -470,3 +470,27 @@ section {
 .card:hover::before {
   opacity: 1;
 }
+
+.desktop {
+  display: none;
+}
+.desktop.open {
+  display: block; /* ou flex selon votre design mobile */
+}
+
+/* Mobile (<640px) */
+@media (max-width: 639px) {
+  .mobile-toggle {
+    display: inline-flex;
+  }
+}
+
+/* Tablette et plus (>=640px) */
+@media (min-width: 640px) {
+  .desktop {
+    display: flex;
+  }
+  .mobile-toggle {
+    display: none;
+  }
+}

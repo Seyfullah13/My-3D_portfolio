@@ -4,7 +4,9 @@ import Experience from './sections/Experience.jsx'
 import FeatureCards from './sections/FeatureCards.jsx'
 import Hero from'./sections/Hero.jsx'
 import ShowcaseSection from './sections/ShowcaseSection.jsx'
-import TechStack from './sections/TechStack.jsx'
+import TechStack from './sections/TechStack.jsx';
+import Contact from './sections/Contact.jsx'
+import Footer from './sections/Footer.jsx'
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
 <FeatureCards/>
 <Experience/>
 <TechStack/>
+<Contact/>
+<Footer/>
   </>
       
   )

@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { navLinks } from "../constants/index"; // bon chemin si constants/index.js
 
 const Navbar = () => {
